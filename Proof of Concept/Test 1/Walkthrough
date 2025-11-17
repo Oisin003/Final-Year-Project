@@ -1,0 +1,17 @@
+Go to:
+
+https://colab.research.google.com/
+ 
+Upload the .ipynb notebook file there and run each section. It will ask you to upload a PDF and it will create a CSV from the data on it. The CSV is not in the correct format, this will be the challenge for you to work on for your Proof of Concept.
+
+This is the page outlining what exists within the library:
+
+https://pypi.org/project/pytesseract/
+
+ 
+
+There are a lot of resources on YouTube and Medium, for example:
+
+https://medium.com/@alexaae9/extract-tables-from-images-or-scanned-pdfs-to-excel-with-python-c110ebcaa5de
+
+https://www.youtube.com/watch?v=yKAuUAPREMw

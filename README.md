@@ -7,3 +7,7 @@ Keywords: NLP, Financial Data, Summarisation, Anomaly Detection, Node.js
 
 
 Project Proposal - 40% - The Project Proposal will be used to access the feasibility of the project.
+
+Technical Report - 40% - 
+
+Project Plan / Proof of Concept - 20% -

@@ -1,0 +1,57 @@
+@startuml
+
+package "Frontend" {
+  [React App] 
+  [Login Page]
+  [Upload Page]
+  [Dashboard]
+
+  [React App] --> [Login Page]
+  [React App] --> [Upload Page]
+  [React App] --> [Dashboard]
+}
+
+package "Backend (Node.js / Express)" {
+  [AuthController]
+  [UploadController]
+  [ResultsController]
+
+  [JWT Service]
+  [File Storage Service]
+  [Pipeline Orchestrator]
+
+  [AuthController] --> [JWT Service]
+  [UploadController] --> [File Storage Service]
+  [UploadController] --> [Pipeline Orchestrator]
+  [ResultsController] --> [Pipeline Orchestrator]
+}
+
+package "NLP Pipeline (Java)" {
+  [TextExtractor]
+  [Preprocessor]
+  [TopicModel]
+  [NERModule]
+  [Summariser]
+  [AnomalyDetector]
+
+  [Pipeline Orchestrator] --> [TextExtractor]
+  [Pipeline Orchestrator] --> [Preprocessor]
+  [Pipeline Orchestrator] --> [TopicModel]
+  [Pipeline Orchestrator] --> [NERModule]
+  [Pipeline Orchestrator] --> [Summariser]
+  [Pipeline Orchestrator] --> [AnomalyDetector]
+}
+
+package "Database" {
+  [Azure SQL]
+}
+
+[React App] --> [AuthController]
+[React App] --> [UploadController]
+[React App] --> [ResultsController]
+
+[AuthController] --> [Azure SQL]
+[UploadController] --> [Azure SQL]
+[ResultsController] --> [Azure SQL]
+
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+start
+
+:User logs in;
+:Validate credentials;
+
+if (Auth success?) then (yes)
+  :Display dashboard;
+else (no)
+  stop
+endif
+
+:User uploads document;
+:Receive and store file;
+
+partition "NLP Pipeline" {
+    :Extract text;
+    :Preprocess text\n(tokenise, stopwords, lemmatise);
+    :Topic Modelling\n(TF-IDF / LDA);
+    :Named Entity Recognition;
+    :Generate Summary\n(TextRank);
+    :Detect anomalies;
+    :Assign traffic light score\n(Green / Amber / Red);
+}
+
+:Aggregate results\n(summary, entities, topics, anomaly score);
+:Return results to frontend;
+:Display analysis dashboard;
+
+stop
+@enduml

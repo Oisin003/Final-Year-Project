@@ -1,0 +1,48 @@
+@startuml
+
+actor User
+participant "React Frontend" as FE
+participant "Node.js Backend" as BE
+participant "AuthService" as AUTH
+participant "NLP Pipeline" as NLP
+participant "TextExtractor" as TE
+participant "Preprocessor" as PP
+participant "TopicModel" as TM
+participant "NERModule" as NER
+participant "Summariser" as SUM
+participant "AnomalyDetector" as AD
+
+User -> FE: 1. Login / Enter Credentials
+FE -> BE: 2. POST /login
+BE -> AUTH: 3. Validate credentials
+AUTH --> BE: 4. Return JWT
+BE --> FE: JWT Token
+
+User -> FE: 5. Upload Document
+FE -> BE: 6. POST /upload (file + JWT)
+
+BE -> NLP: 7. Process Document
+
+NLP -> TE: 8. extractText(file)
+TE --> NLP: rawText
+
+NLP -> PP: 9. preprocess(rawText)
+PP --> NLP: cleanedText
+
+NLP -> TM: 10. run TF-IDF / LDA
+TM --> NLP: topics
+
+NLP -> NER: 11. extractEntities()
+NER --> NLP: entities
+
+NLP -> SUM: 12. runTextRank()
+SUM --> NLP: summary
+
+NLP -> AD: 13. detect anomalies
+AD --> NLP: anomalyScore (Green/Amber/Red)
+
+NLP --> BE: 14. return results
+BE --> FE: 15. summary + entities + topics + anomalyScore
+FE --> User: 16. Display Results Dashboard
+
+@enduml

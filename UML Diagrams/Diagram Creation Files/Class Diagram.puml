@@ -1,0 +1,78 @@
+@startuml
+
+class User {
+  - userId: String
+  - email: String
+  - passwordHash: String
+  + authenticate()
+  + generateJWT()
+}
+
+class Document {
+  - documentId: String
+  - userId: String
+  - fileName: String
+  - fileType: String
+  - rawText: String
+  - processedText: String
+  - topics: List<String>
+  - entities: List<Entity>
+  - summary: String
+  - anomalyScore: String
+  + upload()
+  + extractText()
+  + getResults()
+}
+
+class TextExtractor {
+  + extractPDF()
+  + extractDOCX()
+  + extractXLSX()
+  + runOCR()
+}
+
+class Preprocessor {
+  + tokenize()
+  + removeStopwords()
+  + lemmatise()
+}
+
+class TopicModel {
+  + computeTFIDF()
+  + runLDA()
+  + runBERTopic()
+}
+
+class NERModule {
+  + extractEntities()
+  + extractRelations()
+}
+
+class Summariser {
+  + runTextRank()
+  + computeROUGE()
+  + computeBLEU()
+}
+
+class AnomalyDetector {
+  + applyRules()
+  + scoreDocument()
+}
+
+class Entity {
+  - type: String
+  - value: String
+  - startIndex: int
+  - endIndex: int
+}
+
+User "1" --> "many" Document : uploads
+Document --> TextExtractor : uses
+Document --> Preprocessor : uses
+Document --> TopicModel : uses
+Document --> NERModule : uses
+Document --> Summariser : uses
+Document --> AnomalyDetector : uses
+Document --> Entity : contains
+
+@enduml

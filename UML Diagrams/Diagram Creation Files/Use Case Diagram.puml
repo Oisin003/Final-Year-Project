@@ -1,0 +1,29 @@
+@startuml
+
+actor User
+
+rectangle "NLP Financial Review System" {
+    usecase "Login" as UC1
+    usecase "Upload Document" as UC2
+    usecase "Extract Text" as UC3
+    usecase "Preprocess Text" as UC4
+    usecase "Run Topic Modelling" as UC5
+    usecase "Run NER" as UC6
+    usecase "Generate Summary" as UC7
+    usecase "Detect Anomalies" as UC8
+    usecase "View Results" as UC9
+}
+
+User --> UC1
+User --> UC2
+User --> UC9
+
+UC2 --> UC3
+UC3 --> UC4
+UC4 --> UC5
+UC5 --> UC6
+UC6 --> UC7
+UC7 --> UC8
+UC8 --> UC9
+
+@enduml

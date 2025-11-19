@@ -1,0 +1,5 @@
+Useful Links
+
+
+Node.js + express + Azure + React
+https://uros-randelovic.medium.com/tutorial-how-to-deploy-node-js-express-to-azure-web-apps-and-react-to-static-web-apps-9fea97730303

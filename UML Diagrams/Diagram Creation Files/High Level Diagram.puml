@@ -1,0 +1,89 @@
+@startuml
+title High-Level System Architecture
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam roundcorner 15
+skinparam defaultFontSize 14
+skinparam ArrowColor #555555
+skinparam PackageBorderColor #333333
+skinparam PackageFontColor #333333
+skinparam ComponentBorderColor #444444
+
+' ============================
+' FRONTEND LAYER
+' ============================
+package "Frontend (React.js)" as FE {
+  component FE_UI as "User Interface\nReact Components"
+  component FE_AUTH as "Login & Authentication UI"
+  component FE_UPLOAD as "Document Upload Module"
+}
+
+' ============================
+' BACKEND LAYER
+' ============================
+package "Backend (Node.js / Express)" as BE {
+  component BE_API as "REST API Gateway"
+  component BE_AUTH as "Authentication Service\n(JWT + bcrypt)"
+  component BE_CTRL as "Document Controller\n(File Validation)"
+  component BE_ORCH as "Pipeline Orchestrator"
+}
+
+' ============================
+' NLP PIPELINE
+' ============================
+package "NLP Pipeline (Java)" as NLP {
+  component NLP_EXT as "Text Extraction\n(Tika / OCR)"
+  component NLP_PRE as "Pre-processing\n(Tokenisation, Lemmas)"
+  component NLP_TOPIC as "Topic Modelling\n(TF-IDF / LDA)"
+  component NLP_NER as "Named Entity Recognition\n(FiNER-ORD / OpenNLP)"
+  component NLP_SUM as "Extractive Summarisation\n(TextRank)"
+  component NLP_ANOM as "Anomaly Detection\n(Rule-Based + Probabilistic)"
+}
+
+' ============================
+' OPTIONAL CLOUD SERVICES
+' ============================
+package "Optional Cloud Services (Azure)" as AZ {
+  component AZ_FR as "Form Recognizer"
+  component AZ_ML as "Azure ML / Cognitive Services"
+}
+
+' ============================
+' DATA STORAGE
+' ============================
+package "Secure Storage" as DB {
+  component DB_USERS as "User Accounts DB"
+  component DB_DOCS as "Temporary File Storage"
+  component DB_RES as "Analysis Results"
+}
+
+' ============================
+' CONNECTIONS
+' ============================
+FE_UI --> BE_API : HTTPS Requests
+FE_AUTH --> BE_AUTH
+FE_UPLOAD --> BE_CTRL
+
+BE_API --> BE_AUTH
+BE_API --> BE_CTRL
+BE_CTRL --> BE_ORCH
+
+BE_ORCH --> NLP_EXT
+NLP_EXT --> NLP_PRE
+NLP_PRE --> NLP_TOPIC
+NLP_TOPIC --> NLP_NER
+NLP_NER --> NLP_SUM
+NLP_SUM --> NLP_ANOM
+
+NLP_ANOM --> BE_ORCH
+BE_ORCH --> DB_DOCS
+BE_ORCH --> DB_RES
+BE_AUTH --> DB_USERS
+
+' Optional Cloud Integration
+NLP_EXT --> AZ_FR : optional
+NLP_TOPIC --> AZ_ML : optional
+
+@enduml

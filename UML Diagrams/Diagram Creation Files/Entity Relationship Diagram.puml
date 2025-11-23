@@ -1,0 +1,60 @@
+@startuml
+title Entity–Relationship Diagram (ERD)
+
+skinparam roundcorner 20
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+entity "User" as User {
+  * user_id : int <<PK>>
+  --
+  username : string
+  password_hash : string
+  created_at : datetime
+}
+
+entity "Document" as Document {
+  * document_id : int <<PK>>
+  --
+  filename : string
+  file_type : string
+  uploaded_at : datetime
+  user_id : int <<FK>>
+}
+
+entity "ProcessedText" as ProcessedText {
+  * text_id : int <<PK>>
+  --
+  raw_text : text
+  tokens : text
+  lemmas : text
+  document_id : int <<FK>>
+}
+
+entity "NER_Entity" as NER {
+  * entity_id : int <<PK>>
+  --
+  entity_type : string
+  value : string
+  start_index : int
+  end_index : int
+  confidence : float
+  document_id : int <<FK>>
+}
+
+entity "AnalysisResult" as Result {
+  * result_id : int <<PK>>
+  --
+  summary : text
+  topic_vector : text
+  anomaly_score : float
+  rule_hits : text
+  document_id : int <<FK>>
+}
+
+User ||--o{ Document : uploads
+Document ||--o{ ProcessedText : has
+Document ||--o{ NER : contains
+Document ||--o{ Result : generates
+
+@enduml

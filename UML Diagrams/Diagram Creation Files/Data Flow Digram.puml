@@ -1,0 +1,32 @@
+@startuml
+title Data Flow Diagram – Level 1
+
+skinparam shadowing false
+skinparam rectangle {
+  roundCorner 20
+  borderColor #333333
+}
+
+actor User
+
+rectangle "Frontend (React)" as FE
+rectangle "Backend (Node.js / Express)" as BE
+rectangle "NLP Pipeline (Java)" as NLP
+rectangle "Storage" as DB
+
+User --> FE : Upload Document
+FE --> BE : HTTPS File Upload
+BE --> NLP : Send Extracted Text
+
+NLP --> NLP : Preprocess\nTokenise\nLemmatise
+NLP --> NLP : Topic Modelling\nLDA / TF-IDF
+NLP --> NLP : NER Extraction
+NLP --> NLP : Summarisation\nTextRank
+NLP --> NLP : Anomaly Detection
+
+NLP --> BE : Processed Results
+BE --> DB : Save Results
+BE --> FE : Return JSON Output
+FE --> User : Display Summary, Entities\n& Anomaly Score
+
+@enduml

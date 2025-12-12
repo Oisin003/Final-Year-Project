@@ -120,6 +120,6 @@ app.get("/api/me", authenticateToken, (req, res) => {
   res.json(user);
 });
 
-app.get("/", (req, res) => res.send("Financial NLP System API - Server is running!"));
+app.get("/", (req, res) => res.send("Achilles Ltd API - Server is running!"));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

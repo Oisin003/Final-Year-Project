@@ -8,7 +8,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>Financial NLP System</h3>
+          <h3>Achilles Ltd</h3>
           <p>Advanced document analysis and insights</p>
         </div>
         <div className="footer-section">
@@ -21,12 +21,12 @@ function Footer() {
         </div>
         <div className="footer-section">
           <h4>Contact</h4>
-          <p>Email: support@financialnlp.com</p>
+          <p>Email: support@achillesltd.com</p>
           <p>Phone: +353 123 4567</p>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {currentYear} Financial NLP System. All rights reserved.</p>
+        <p>&copy; {currentYear} Achilles Ltd. All rights reserved.</p>
       </div>
     </footer>
   );

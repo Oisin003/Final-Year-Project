@@ -6,7 +6,7 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="header-content">
-          <h2>Financial Document Analysis Platform</h2>
+          <h2>Achilles Ltd</h2>
           <p>Advanced NLP-powered insights for financial documents</p>
         </div>
       </div>

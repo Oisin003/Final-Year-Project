@@ -16,7 +16,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <h1>Financial NLP System</h1>
+          <h1>Achilles Ltd</h1>
         </div>
         <ul className="navbar-menu">
           <li><a href="/dashboard">Dashboard</a></li>

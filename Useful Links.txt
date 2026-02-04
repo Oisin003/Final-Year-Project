@@ -3,3 +3,13 @@ Useful Links
 
 Node.js + express + Azure + React
 https://uros-randelovic.medium.com/tutorial-how-to-deploy-node-js-express-to-azure-web-apps-and-react-to-static-web-apps-9fea97730303
+
+
+What is Optical Character Recognition (OCR)? - 04/02/2026 - 
+https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-optical-character-recognition-ocr/
+
+Extract text from PDF File using Python - 04/02/26
+https://www.geeksforgeeks.org/python/extract-text-from-pdf-file-using-python/
+
+Node.js File System Module - 02/04/26
+https://www.w3schools.com/nodejs/nodejs_filesystem.asp

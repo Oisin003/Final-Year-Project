@@ -13,3 +13,18 @@ https://www.geeksforgeeks.org/python/extract-text-from-pdf-file-using-python/
 
 Node.js File System Module - 02/04/26
 https://www.w3schools.com/nodejs/nodejs_filesystem.asp
+
+Apache Tika OCR - 06/02/26
+https://cwiki.apache.org/confluence/display/TIKA/TikaOCR
+
+PDFBox - used by Tika for PDFs - 06/02/26
+https://pdfbox.apache.org/
+
+Tesseract OCR - 06/02/2026
+https://tesseract-ocr.github.io/
+
+JP2 background - 06/02/26
+https://www.geeksforgeeks.org/computer-graphics/process-of-jpeg-data-compression/
+
+OCR - 06/02/2026
+https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-optical-character-recognition-ocr/

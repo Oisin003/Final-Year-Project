@@ -28,3 +28,18 @@ https://www.geeksforgeeks.org/computer-graphics/process-of-jpeg-data-compression
 
 OCR - 06/02/2026
 https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-optical-character-recognition-ocr/
+
+JavaScript string cleanup used for evidence trimming - 09/02/2026
+https://www.w3schools.com/js/js_string_methods.asp
+
+JavaScript regular expressions used for number matching and percent parsing - 09/02/2026
+https://www.w3schools.com/js/js_regexp.asp
+
+React useState for toggling audit panel - 09/02/2026
+https://www.geeksforgeeks.org/reactjs/reactjs-usestate-hook/
+
+React conditional rendering showing and hiding the audit cards - 09/02/2026
+https://www.geeksforgeeks.org/reactjs/reactjs-conditional-rendering/
+
+SQL altering the table - 09/02/2026
+https://www.w3schools.com/sql/sql_alter.asp

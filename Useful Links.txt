@@ -56,4 +56,7 @@ https://www.w3schools.com/python/numpy/default.asp
 Graph-Based Ranking Algorithms in Text Mining - 19/02/2026
 https://www.geeksforgeeks.org/nlp/graph-based-ranking-algorithms-in-text-mining/
 
+Blue and Rouge - 27/02/2026
+https://www.geeksforgeeks.org/nlp/understanding-bleu-and-rouge-score-for-nlp-evaluation/
+
 

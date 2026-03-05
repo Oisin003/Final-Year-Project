@@ -59,4 +59,12 @@ https://www.geeksforgeeks.org/nlp/graph-based-ranking-algorithms-in-text-mining/
 Blue and Rouge - 27/02/2026
 https://www.geeksforgeeks.org/nlp/understanding-bleu-and-rouge-score-for-nlp-evaluation/
 
+Python RegEx - 27/02/2026
+https://www.geeksforgeeks.org/python/python-regex/
+
+Graph-based Ranking Algorithms in Text Mining - 05/03/2026
+https://www.geeksforgeeks.org/nlp/graph-based-ranking-algorithms-in-text-mining/
+
+
+
 

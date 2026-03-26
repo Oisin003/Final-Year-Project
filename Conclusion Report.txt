@@ -1,0 +1,11 @@
+I have read through the conclusion and I am happy with it, I just have a few points below:
+
+ 
+
+In the first paragraph there is a typo “full-stack-stack”, in the second paragraph rephrase “proved to be learning opportunity”.
+
+In the future work paragraph I would extend it further to discuss possibly using LIME or SHAP to provide more meaningful explainable summaries if a transformer model would be used.
+
+ 
+
+After the easter break can you send me on the final document? I had a quick skim through it and everything looked great but I would like to have one last run through it before I have to mark it.
